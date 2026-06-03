@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox/Grid Layout Challenge - Nova</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Grid Layout Section -->
+    <section class="grid-section">
+        <div class="masonry-grid">
+            <div class="grid-item">
+                <div class="grid-item-content">
+                    <img src="../images/gallary1.jpg" width="100%" height="100%" alt="Image 1">
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-content">
+                    <img src="../images/gallary2.jpg" width="100%" height="100%" alt="Image 2">
+                </div>
+            </div>
+            <div class="grid-item tall">
+                <div class="grid-item-content">
+                    <img src="../images/gallary3.jpg" width="100%" height="100%" alt="Image 3">
+                </div>
+            </div>
+            <div class="grid-item wide">
+                <div class="grid-item-content">
+                    <img src="../images/gallary4.jpg" width="100%" height="100%" alt="Image 4">
+                </div>
+            </div>
+            <div class="grid-item tall">
+                <div class="grid-item-content">
+                    <img src="../images/gallary5.jpg" width="100%" height="100%" alt="Image 5">
+                </div>
+            </div>
+            <div class="grid-item tall">
+                <div class="grid-item-content">
+                    <img src="../images/gallary6.jpg" width="100%" height="100%" alt="Image 6">
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-content">
+                    <img src="../images/gallary7.jpg" width="100%" height="100%" alt="Image 7">
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-content">
+                    <img src="../images/gallary8.jpg" width="100%" height="100%" alt="Image 8">
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-content">
+                    <img src="../images/gallary9.jpg" width="100%" height="100%" alt="Image 9">
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-content">
+                    <img src="../images/gallary10.jpg" width="100%" height="100%" alt="Image 10">
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-content">
+                    <img src="../images/gallary11.jpg" width="100%" height="100%" alt="Image 11">
+                </div>
+            </div>
+            <div class="grid-item wide">
+                <div class="grid-item-content">
+                    <img src="../images/gallary12.jpg" width="100%" height="100%" alt="Image 12">
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-item-content">
+                    <img src="../images/gallary13.jpg" width="100%" height="100%"alt="Image 13">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">NOVA</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#purchase">Purchase</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Modal/Invite Section -->
+    <section class="modal-overlay">
+        <div class="modal-dots">
+            <div class="modal-dot active"></div>
+            <div class="modal-dot"></div>
+            <div class="modal-dot"></div>
+        </div>
+
+        <div class="invite-modal">
+            <h2>Invite Users</h2>
+            <div class="email-inputs">
+                <div class="email-input-wrapper">
+                    <input type="email" placeholder="Enter email address">
+                    <button class="remove-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="email-input-wrapper">
+                    <input type="email" placeholder="Enter email address">
+                    <button class="remove-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="email-input-wrapper">
+                    <input type="email" placeholder="Enter email address">
+                    <button class="remove-btn"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="email-input-wrapper">
+                    <input type="email" placeholder="Enter email address">
+                    <button class="remove-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <button class="send-invites-btn">Send Invites!</button>
+            <div class="skip-step">Skip This Step</div>
+        </div>
+    </section>
+
+    <script>
+        // Modal dot navigation
+        const dots = document.querySelectorAll('.modal-dot');
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+
+        // Remove email input
+        const removeBtns = document.querySelectorAll('.remove-btn');
+        removeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.parentElement.remove();
+            });
+        });
+
+        // Send invites button
+        const sendBtn = document.querySelector('.send-invites-btn');
+        sendBtn.addEventListener('click', () => {
+            const inputs = document.querySelectorAll('.email-input-wrapper input');
+            let hasEmail = false;
+            
+            inputs.forEach(input => {
+                if (input.value) {
+                    hasEmail = true;
+                    console.log('Sending invite to:', input.value);
+                }
+            });
+            
+            if (hasEmail) {
+                alert('Invites sent successfully!');
+            } else {
+                alert('Please enter at least one email address.');
+            }
+        });
+
+        // Skip step
+        const skipStep = document.querySelector('.skip-step');
+        skipStep.addEventListener('click', () => {
+            alert('Skipping invite step...');
+        });
+
+        // Active navigation
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

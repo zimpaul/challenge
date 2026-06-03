@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Trading Application</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="company-branding">
+            <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+            <div class="company-logo">NG</div>
+            <div class="company-name">NOVE GROUP</div>
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search applications, stocks, reports...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="header-actions">
+            <button class="icon-btn"><i class="fas fa-bell"></i></button>
+            <button class="icon-btn"><i class="fas fa-envelope"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <button class="icon-btn"><i class="fas fa-shopping-cart"></i></button>
+            <div class="profile-section">
+                <div class="profile-avatar">JD</div>
+                <span>JOHN DOE</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-item active">
+                        <span class="nav-icon"><i class="fas fa-home"></i></span>
+                        <span>HOME</span>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Main Menu</div>
+                    <div class="nav-item has-dropdown" onclick="toggleDropdown(this)">
+                        <span class="nav-icon"><i class="fas fa-mobile-alt"></i></span>
+                        <span>APPLICATIONS</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item">All Applications</div>
+                        <div class="dropdown-item">My Applications</div>
+                        <div class="dropdown-item">Favorites</div>
+                    </div>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-title">Data Tools</div>
+                    <div class="nav-item has-dropdown" onclick="toggleDropdown(this)">
+                        <span class="nav-icon"><i class="fas fa-chart-bar"></i></span>
+                        <span>DATA TOOLS</span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-item">Analysis Tools</div>
+                        <div class="dropdown-item">Data Reports</div>
+                        <div class="dropdown-item">Emailer Tools</div>
+                        <div class="dropdown-item">Import Designs</div>
+                        <div class="dropdown-item">Previous Reports</div>
+                        <div class="dropdown-item">Web Capabilities</div>
+                    </div>
+                </div>    
+                <div class="nav-section">
+                    <div class="nav-title">Miscellaneous</div>
+                    <div class="nav-item has-dropdown" onclick="toggleDropdown(this)">
+                        <span class="nav-icon"><i class="fas fa-folder"></i></span>
+                        <span>ARCHIVES</span>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item">2023 Reports</div>
+                            <div class="dropdown-item">2022 Reports</div>
+                        </div>
+                    <div class="nav-item has-dropdown" onclick="toggleDropdown(this)">
+                        <span class="nav-icon"><i class="fas fa-chart-line"></i></span>
+                        <span>DASHBOARD</span>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item">Overview</div>
+                            <div class="dropdown-item">Performance</div>
+                        </div>
+                    <div class="nav-item has-dropdown" onclick="toggleDropdown(this)">
+                        <span class="nav-icon"><i class="fas fa-plug"></i></span>
+                        <span>PLUG-INS</span>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item">Installed</div>
+                            <div class="dropdown-item">Available</div>
+                        </div>
+                    <div class="nav-item has-dropdown" onclick="toggleDropdown(this)">
+                        <span class="nav-icon"><i class="fas fa-cog"></i></span>
+                        <span>PREFERENCES</span>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item">Account Settings</div>
+                            <div class="dropdown-item">Notifications</div>
+                            <div class="dropdown-item">Privacy</div>
+                        </div>
+                </div>    
+
+                <button class="read-more-btn">READ MORE BUTTON</button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-wrapper">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-avatar">JD</div>
+                <div class="welcome-text">
+                    <h1>WELCOME USER</h1>
+                    <p>Administrator Role, Nova Trading, United Kingdom</p>
+                </div>
+            </div>
+
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <button class="banner-nav banner-prev">‹</button>
+                <div class="hero-content">
+                    <div class="hero-icon"><i class="fas fa-star"></i></div>
+                    <h2>Featured Content</h2>
+                    <p>Discover the latest tools and applications</p>
+                </div>
+                <button class="banner-nav banner-next">›</button>
+            </div>
+
+            <!-- Applications Grid -->
+            <h2 class="section-title">Applications</h2>
+            <div class="apps-grid">
+                <div class="app-card featured">
+                    <div class="app-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h4>Market Analysis</h4>
+                    <p>Use this to explore or give a short brief on this web application.</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Portfolio Tracker</h4>
+                    <p>Use this to explore or give a short brief on this web application.</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h4>Financial Dashboard</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-chart-network"></i></div>
+                    <h4>Network Analysis</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-coins"></i></div>
+                    <h4>Investment Portfolio</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-university"></i></div>
+                    <h4>Educational Resources</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h4>Mobile Applications</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-bell"></i></div>
+                    <h4>Notifications</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Energy Efficiency</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-tasks"></i></div>
+                    <h4>Market Analysis</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-key"></i></div>
+                    <h4>Key Features</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon"><i class="fas fa-lock"></i></div>
+                    <h4>Security</h4>
+                    <p>Use this to explain or give a short brief on this web application</p>
+                    <span class="read-details">READ DETAILS →</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="right-sidebar">
+            <!-- My Chats Widget -->
+            <div class="sidebar-section">
+                <div class="widget-header">
+                    <span>MY CHATS</span>
+                    <i class="fas fa-comments"></i>
+                </div>
+                
+                <div class="chat-list">
+                    <div class="chat-item">
+                        <div class="chat-avatar" style="background-color: #e91e63;">S</div>
+                        <div class="chat-info">
+                            <div class="chat-name">Stacey</div>
+                            <div class="chat-message">Did you get it right?</div>
+                        </div>
+                        <button class="chat-action admin">Admin</button>
+                    </div>
+
+                    <div class="chat-item">
+                        <div class="chat-avatar" style="background-color: #2196f3;">M</div>
+                        <div class="chat-info">
+                            <div class="chat-name">Mathew</div>
+                            <div class="chat-message">I have sent you the updates</div>
+                        </div>
+                        <button class="chat-action admin">Admin</button>
+                    </div>
+
+                    <div class="chat-item">
+                        <div class="chat-avatar" style="background-color: #4caf50;">S</div>
+                        <div class="chat-info">
+                            <div class="chat-name">Simon</div>
+                            <div class="chat-message">"Can we join later lunch"</div>
+                        </div>
+                        <button class="chat-action">Join</button>
+                    </div>
+
+                    <div class="chat-item">
+                        <div class="chat-avatar" style="background-color: #ff9800;">A</div>
+                        <div class="chat-info">
+                            <div class="chat-name">Anthony</div>
+                            <div class="chat-message">I read/edited your volume</div>
+                        </div>
+                        <button class="chat-action">Join</button>
+                    </div>
+
+                    <div class="chat-item">
+                        <div class="chat-avatar" style="background-color: #9c27b0;">L</div>
+                        <div class="chat-info">
+                            <div class="chat-name">Lindo</div>
+                            <div class="chat-message">We are going on a roadtrip</div>
+                        </div>
+                        <button class="chat-action">Join</button>
+                    </div>
+
+                    <div class="chat-item">
+                        <div class="chat-avatar" style="background-color: #607d8b;">R</div>
+                        <div class="chat-info">
+                            <div class="chat-name">Roxyanne</div>
+                            <div class="chat-message">Would you like some rosemary?</div>
+                        </div>
+                        <button class="chat-action">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- My To Do List -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>MY TO DO LIST</span>
+                    <span style="font-size: 12px;"><i class="fas fa-tasks"></i></span>
+                </div>
+                <div class="todo-list">
+                    <div class="todo-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="todo-text">
+                        <strong>MY TO-DO LIST</strong><br><br>
+                        YOU ARE CURRENTLY UP TO DATE WITH YOUR TASKS
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Rated Applications -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>TOP RATED APPLICATIONS</span>
+                </div>
+                <div class="top-apps-list">
+                    <div class="top-app-item">
+                        <span class="top-app-rank">1</span>
+                        <span>Both flexible and versatile, you are able to activate the app in your assets with ease to deploy</span>
+                    </div>
+                    <div class="top-app-item">
+                        <span class="top-app-rank">2</span>
+                        <span>Advanced analytics and reporting tools</span>
+                    </div>
+                    <div class="top-app-item">
+                        <span class="top-app-rank">3</span>
+                        <span>Real-time market data streaming</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Toggle Sidebar for Mobile
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // Toggle Dropdown Menu
+        function toggleDropdown(element) {
+            element.classList.toggle('open');
+            const dropdown = element.nextElementSibling;
+            if (dropdown && dropdown.classList.contains('dropdown-menu')) {
+                dropdown.classList.toggle('show');
+            }
+        }
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const sidebar = document.getElementById('sidebar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                }
+            }
+        });
+
+        // Add active state to nav items
+        document.querySelectorAll('.nav-item, .dropdown-item').forEach(item => {
+            item.addEventListener('click', function() {
+                if (!this.classList.contains('has-dropdown')) {
+                    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Simulate real-time updates
+        setInterval(() => {
+            // Update notification badge randomly
+            const badge = document.querySelector('.notification-badge');
+            const count = Math.floor(Math.random() * 5) + 1;
+            badge.textContent = count;
+        }, 30000);
+
+        // Banner navigation
+        let currentSlide = 0;
+        const bannerPrev = document.querySelector('.banner-prev');
+        const bannerNext = document.querySelector('.banner-next');
+
+        if (bannerPrev && bannerNext) {
+            bannerPrev.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + 3) % 3;
+                updateBanner();
+            });
+
+            bannerNext.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % 3;
+                updateBanner();
+            });
+        }
+
+        function updateBanner() {
+            const heroContent = document.querySelector('.hero-content');
+            const banners = [
+                { icon: '<i class="fas fa-star"></i>', title: 'Featured Content', desc: 'Discover the latest tools and applications' },
+                { icon: '<i class="fas fa-chart-bar"></i>', title: 'Market Analysis', desc: 'Real-time stock market insights and trends' },
+                { icon: '<i class="fas fa-chart-line"></i>', title: 'Trading Tools', desc: 'Advanced tools for professional traders' }
+            ];
+            
+            heroContent.innerHTML = `
+                <div class="hero-icon">${banners[currentSlide].icon}</div>
+                <h2>${banners[currentSlide].title}</h2>
+                <p>${banners[currentSlide].desc}</p>
+            `;
+        }
+
+        // Add hover effects to app cards
+        document.querySelectorAll('.app-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const appCards = document.querySelectorAll('.app-card');
+                
+                appCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const desc = card.querySelector('p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = searchTerm ? 'none' : 'block';
+                    }
+                });
+            });
+        }
+
+        // Chat item click handler
+        document.querySelectorAll('.chat-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const name = this.querySelector('.chat-name').textContent;
+                alert(`Opening chat with ${name}`);
+            });
+        });
+
+        // App card click handler
+        document.querySelectorAll('.app-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('h3').textContent;
+                alert(`Opening application: ${title}`);
+            });
+        });
+
+        // Responsive grid adjustment
+        function adjustGrid() {
+            const grid = document.querySelector('.apps-grid');
+            if (window.innerWidth < 768) {
+                grid.style.gridTemplateColumns = '1fr';
+            } else if (window.innerWidth < 1024) {
+                grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            } else {
+                grid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(220px, 1fr))';
+            }
+        }
+
+        window.addEventListener('resize', adjustGrid);
+        adjustGrid();
+
+        // Initialize with animation
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.app-card').forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>

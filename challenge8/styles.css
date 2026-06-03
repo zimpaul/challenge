@@ -1,0 +1,458 @@
+/* Base Styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Arial', sans-serif;
+background-color: #1a1a1a;
+color: #ffffff;
+overflow: hidden;
+}
+
+/* Header Section */
+
+header {
+background-color: #2d2d2d;
+padding: 0;
+border-bottom: 2px solid #404040;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 1000;
+height: 60px;
+}
+
+.header-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 100%;
+padding: 0 20px;
+max-width: 100%;
+}
+
+.logo {
+font-size: 28px;
+font-weight: bold;
+letter-spacing: 2px;
+color: #ffffff;
+margin-right: 40px;
+}
+
+.main-nav {
+display: flex;
+gap: 30px;
+flex: 1;
+}
+
+.main-nav a {
+color: #ffffff;
+text-decoration: none;
+font-size: 14px;
+font-weight: 500;
+letter-spacing: 1px;
+text-transform: uppercase;
+transition: color 0.3s ease;
+padding: 20px 0;
+border-bottom: 3px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+color: #cccccc;
+border-bottom-color: #ffffff;
+}
+
+.header-right {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.language-selector {
+font-size: 12px;
+color: #b0b0b0;
+}
+
+.header-links {
+display: flex;
+gap: 15px;
+align-items: center;
+}
+
+.header-links a {
+color: #b0b0b0;
+text-decoration: none;
+font-size: 13px;
+transition: color 0.3s ease;
+}
+
+.header-links a:hover {
+color: #ffffff;
+}
+
+.account-btn {
+display: flex;
+align-items: center;
+gap: 8px;
+background-color: #1a1a1a;
+padding: 8px 15px;
+border-radius: 20px;
+border: 1px solid #404040;
+}
+
+/* Search Bar */
+.search-bar {
+background-color: #2d2d2d;
+padding: 15px 20px;
+position: fixed;
+top: 60px;
+left: 0;
+right: 0;
+z-index: 999;
+border-bottom: 1px solid #404040;
+}
+
+.search-container {
+display: flex;
+gap: 15px;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.search-field {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.search-field label {
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 1px;
+color: #b0b0b0;
+font-weight: 600;
+}
+
+.search-field input,
+.search-field select {
+padding: 10px 15px;
+background-color: #1a1a1a;
+border: 2px solid #404040;
+color: #ffffff;
+border-radius: 5px;
+font-size: 14px;
+min-width: 120px;
+transition: all 0.3s ease;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+outline: none;
+border-color: #ffffff;
+}
+
+.search-field.location {
+flex: 1;
+min-width: 200px;
+}
+
+.search-field.location input {
+width: 100%;
+}
+
+.price-range {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.price-range span {
+color: #b0b0b0;
+font-size: 14px;
+}
+
+.btn-update {
+padding: 10px 30px;
+background-color: #ffffff;
+color: #1a1a1a;
+border: none;
+border-radius: 25px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1px;
+cursor: pointer;
+transition: all 0.3s ease;
+margin-left: auto;
+}
+
+.btn-update:hover {
+background-color: #e0e0e0;
+transform: translateY(-2px);
+box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.advanced-search {
+color: #b0b0b0;
+text-decoration: none;
+font-size: 13px;
+margin-left: 10px;
+transition: color 0.3s ease;
+}
+
+.advanced-search:hover {
+color: #ffffff;
+text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+display: flex;
+margin-top: 130px;
+height: calc(100vh - 130px);
+overflow: hidden;
+}
+
+/* Property Listings Sidebar */
+.property-sidebar {
+width: 450px;
+background-color: #1a1a1a;
+overflow-y: auto;
+border-right: 2px solid #404040;
+padding: 20px;
+}
+
+.property-sidebar::-webkit-scrollbar {
+width: 8px;
+}
+
+.property-sidebar::-webkit-scrollbar-track {
+background: #2d2d2d;
+}
+
+.property-sidebar::-webkit-scrollbar-thumb {
+background: #404040;
+border-radius: 4px;
+}
+
+.property-sidebar::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+.property-card {
+background-color: #2d2d2d;
+border: 2px solid #404040;
+border-radius: 10px;
+padding: 20px;
+margin-bottom: 20px;
+transition: all 0.3s ease;
+cursor: pointer;
+display: flex;
+gap: 20px;
+}
+
+.property-card:hover {
+border-color: #ffffff;
+transform: translateX(5px);
+box-shadow: -5px 5px 20px rgba(255, 255, 255, 0.1);
+}
+
+.property-image {
+width: 150px;
+height: 120px;
+background: linear-gradient(135deg, #404040 0%, #2d2d2d 100%);
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 48px;
+color: #666;
+border: 2px solid #404040;
+flex-shrink: 0;
+overflow: hidden;
+}
+
+.property-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.property-details {
+flex: 1;
+}
+
+.property-title {
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 5px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.property-price {
+font-size: 24px;
+font-weight: 700;
+color: #ffffff;
+margin-bottom: 15px;
+}
+
+.property-description {
+font-size: 13px;
+color: #b0b0b0;
+line-height: 1.6;
+margin-bottom: 10px;
+}
+
+.property-features {
+display: flex;
+gap: 15px;
+font-size: 13px;
+color: #cccccc;
+margin-top: 10px;
+}
+
+.property-features span {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.property-features i {
+color: #ffffff;
+}
+
+/* Map Area */
+.map-container {
+flex: 1;
+position: relative;
+overflow: hidden;
+}
+
+.map-container iframe {
+width: 100%;
+height: 100%;
+border: none;
+filter: grayscale(20%) invert(90%);
+}
+
+.map-overlay-markers {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none; 
+}
+
+.overlay-marker {
+position: absolute;
+width: 40px;
+height: 40px;
+background-color: #ffffff;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+pointer-events: auto;
+transition: all 0.3s ease;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+border: 3px solid #1a1a1a;
+}
+
+.overlay-marker:hover {
+transform: scale(1.2);
+background-color: #1a1a1a;
+color: #ffffff;
+}
+
+.overlay-marker i {
+font-size: 16px;
+color: #e13b3b;
+}
+
+.overlay-marker:hover i {
+color: #ffffff;
+}
+
+/* Marker positions */
+.marker-1 { top: 20%; left: 25%; }
+.marker-2 { top: 35%; left: 55%; }
+.marker-3 { top: 55%; left: 35%; }
+.marker-4 { top: 70%; left: 65%; }
+.marker-5 { top: 45%; left: 80%; }
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+.property-sidebar {
+width: 350px;
+}
+
+.main-nav {
+gap: 20px;
+}
+
+.main-nav a {
+font-size: 12px;
+}
+}
+
+@media (max-width: 768px) {
+.property-sidebar {
+width: 100%;
+position: absolute;
+z-index: 100;
+height: 100%;
+}
+
+.map-container {
+display: none;
+}
+
+.search-container {
+flex-direction: column;
+align-items: stretch;
+}
+
+.search-field {
+width: 100%;
+}
+
+.search-field.location input {
+width: 100%;
+}
+
+.price-range {
+width: 100%;
+justify-content: space-between;
+}
+
+.btn-update {
+margin-left: 0;
+width: 100%;
+}
+
+.header-links {
+display: none;
+}
+}
+
+/* Loading Animation */
+@keyframes pulse {
+0%, 100% {
+opacity: 1;
+}
+50% {
+opacity: 0.5;
+}
+}
+
+.property-card {
+animation: pulse 2s ease-in-out;
+}
